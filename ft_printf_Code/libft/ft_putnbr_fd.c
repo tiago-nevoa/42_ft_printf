@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 18:39:26 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/05 15:44:37 by tiago_nevoa      ###   ########.fr       */
+/*   Created: 2021/12/20 18:41:19 by tferreir          #+#    #+#             */
+/*   Updated: 2022/03/05 16:37:33 by tiago_nevoa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	index;
-
-	index = 0;
-	while (s[index])
-		index++;
-	return (index);
+	if (n < 0)
+	{
+		if (n == -2147483648)
+		{
+			ft_putstr_fd("-2147483648", fd);
+			return ;
+		}
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n >= 0 && n < 10)
+	{
+		n = n + '0';
+		ft_putchar_fd(n, fd);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		n = n % 10 + '0';
+		ft_putchar_fd(n, fd);
+	}
 }
-/*
-int	main(void)
-{
-	char	*s;
-
-	s = "123456";
-	printf("The String s = %s\n", s);
-	printf("s lenght is = %zu", ft_strlen(s));
-}
-*/

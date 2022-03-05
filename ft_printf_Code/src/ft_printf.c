@@ -6,11 +6,11 @@
 /*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:33:08 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/05 15:44:30 by tiago_nevoa      ###   ########.fr       */
+/*   Updated: 2022/03/05 16:45:35 by tiago_nevoa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int	ft_printf(const char *format, ...)
 {

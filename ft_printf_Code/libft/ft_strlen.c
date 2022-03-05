@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 15:39:27 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/05 16:43:26 by tiago_nevoa      ###   ########.fr       */
+/*   Created: 2021/11/10 18:39:26 by tferreir          #+#    #+#             */
+/*   Updated: 2022/03/05 16:37:36 by tiago_nevoa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
+#include "libft.h"
 
-# define  FT_PRINTF_H
+size_t	ft_strlen(const char *s)
+{
+	size_t	index;
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stdio.h>
-# include <limits.h>
+	index = 0;
+	while (s[index])
+		index++;
+	return (index);
+}
+/*
+int	main(void)
+{
+	char	*s;
 
-int		ft_printf(const char *format, ...);
-
-void	ft_flag_select(char flag, va_list arguments);
-void	ft_putchar_fd(char c, int fd);
-
-#endif
+	s = "123456";
+	printf("The String s = %s\n", s);
+	printf("s lenght is = %zu", ft_strlen(s));
+}
+*/

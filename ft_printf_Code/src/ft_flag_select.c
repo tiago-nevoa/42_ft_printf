@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 /*
 return int lenght of char on console
 'p' Pointer location in memo on Hexa Ex: 0x7ffee9d48938

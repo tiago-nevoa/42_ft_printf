@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 18:19:19 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/05 15:30:21 by tiago_nevoa      ###   ########.fr       */
+/*   Created: 2021/12/20 18:09:59 by tferreir          #+#    #+#             */
+/*   Updated: 2022/03/05 16:37:31 by tiago_nevoa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
+	write(fd, &c, 1);
 }
