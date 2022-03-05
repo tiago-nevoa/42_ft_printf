@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 19:45:14 by tferreir          #+#    #+#             */
-/*   Updated: 2021/11/30 18:05:16 by tferreir         ###   ########.fr       */
+/*   Created: 2021/11/10 18:39:26 by tferreir          #+#    #+#             */
+/*   Updated: 2022/03/05 15:44:37 by tiago_nevoa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_isascii(int c)
+size_t	ft_strlen(const char *s)
 {
-	return (c >= 0 && c <= 127);
+	size_t	index;
+
+	index = 0;
+	while (s[index])
+		index++;
+	return (index);
 }
 /*
 int	main(void)
 {
-	char	c;
+	char	*s;
 
-	c = 0;
-	while (c <= 126)
-	{
-		if (ft_isascii(c))
-			printf("c = %c -> is ASCII \n", c);
-		else
-			printf("c = %c -> NOT NOT NOT ASCII \n", c);
-		c++;
-	}
+	s = "123456";
+	printf("The String s = %s\n", s);
+	printf("s lenght is = %zu", ft_strlen(s));
 }
 */
