@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flag_case.c                                     :+:      :+:    :+:   */
+/*   ft_flag_select.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -20,7 +20,7 @@ return int lenght of char on console
 'X' convert to Hex with UpperCase
 '%' print '%'
 */
-void	ft_flag_case(char flag, va_list arguments)
+void	ft_flag_select(char flag, va_list arguments)
 {
 	if (flag == 'c')
 		ft_putchar_fd(va_arg(arguments, int), 1);

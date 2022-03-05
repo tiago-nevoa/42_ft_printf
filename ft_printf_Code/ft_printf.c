@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:33:08 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/03 23:33:07 by tferreir         ###   ########.fr       */
+/*   Updated: 2022/03/05 15:01:34 by tiago_nevoa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// gcc ft_printf.c Libft_Code/ft_putchar_fd.c Libft_Code/ft_putnbr_fd.c Libft_Code/ft_putstr_fd.c Libft_Code/ft_strlen.c ft_flag_case.c;
+// gcc ft_printf.c Libft_Code/ft_putchar_fd.c Libft_Code/ft_putnbr_fd.c Libft_Code/ft_putstr_fd.c Libft_Code/ft_strlen.c ft_flag_select.c;
 
-void	ft_flag_case(char flag, va_list arguments);
+void	ft_flag_select(char flag, va_list arguments);
 
 int	ft_printf(const char *format, ...)
 {
@@ -28,7 +28,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			++i;
-			ft_flag_case(format[i], arguments);
+			ft_flag_select(format[i], arguments);
 		}
 		else
 			ft_putchar_fd(format[i], 1);
