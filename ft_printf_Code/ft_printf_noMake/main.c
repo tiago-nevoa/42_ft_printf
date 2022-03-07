@@ -6,7 +6,7 @@
 /*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 17:29:18 by tiago_nevoa       #+#    #+#             */
-/*   Updated: 2022/03/05 18:00:46 by tiago_nevoa      ###   ########.fr       */
+/*   Updated: 2022/03/07 15:29:49 by tiago_nevoa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main(void)
 	int	counter;
 
 	counter = 0;
-	counter = ft_printf("ABC 123 %d  %c fdsfds %u ] %s [ :\' -/*", 8, 'h', 12, "ccm_always");
+	counter = ft_printf("ABC 123 %d  %c fdsfds %u ] %s [ :\' -/* lowhex: %x upperhex: %X", 8, 'h', 12, "ccm_always", -27, +27);
 	printf("\nN_caracters: %d \n", counter);
-	counter = printf("ABC 123 %d  %c fdsfds %u ] %s [ :\' -/*", 5, 'h', 6, "ccm_always");
+	counter = printf("ABC 123 %d  %c fdsfds %u ] %s [ :\' -/* lowhex: %x upperhex: %X", 8, 'h', 12, "ccm_always", -27, +27);
 	printf("\nN_caracters: %d \n", counter);
 	printf("%p\n", &counter);
 	return (0);

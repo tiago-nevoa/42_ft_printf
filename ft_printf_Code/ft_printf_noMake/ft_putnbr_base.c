@@ -1,45 +1,81 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base_fd.c                                :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:56:18 by tiago_nevoa       #+#    #+#             */
-/*   Updated: 2022/03/06 13:06:37 by tiago_nevoa      ###   ########.fr       */
+/*   Updated: 2022/03/07 15:24:48 by tiago_nevoa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putnbr_base_fd(int n, char *base, int fd)
+int	ft_check_base(char *base)
 {
-	int counter;
+	int		i;
+	int		j;
 
-	counter = 0;
-	if (n < 0)
+	if (ft_strlen(base) < 2)
+		return (0);
+	i = 0;
+	while (base[i])
 	{
-		if (n == -2147483648)
+		if (base[i] == '-' || base[i] == '+' || !ft_isprint(base[i]))
+			return (0);
+		j = i + 1;
+		while (base[j])
 		{
-			ft_putstr_fd("-2147483648", fd);
-			return (11);
+			if (base[i] == base[j])
+				return (0);
+			j++;
 		}
-		ft_putchar_fd('-', fd);
-		++counter;
-		n = -n;
+		i++;
 	}
-	if (n >= 0 && n < ft_strlen(base))
+	return (1);
+}
+
+int	ft_putnbr_base(int nbr, char *base)
+{
+	long	nbr_l;
+	char	nbr_c[32];
+	int		base_divider;
+	int		i;
+	int		c;
+
+	c = 0;
+	if (!ft_check_base(base))
+		return (c);
+	base_divider = ft_strlen(base);
+	if (nbr < 0)
 	{
-		n = n + '0';
-		ft_putchar_fd(base[n], fd);
-		++counter;
+		nbr_l = nbr;
+		nbr_l = -nbr_l;
+		ft_putchar_fd('-',1);
+		c++;
 	}
 	else
+		nbr_l = nbr;
+	i = 0;
+	while (nbr_l > 0)
 	{
-		ft_putnbr_base_fd(n / 10, fd);
-		n = n % 10 + '0';
-		ft_putchar_fd(n, fd);
-		++counter;
+		nbr_c[i] = base[nbr_l % base_divider];
+		nbr_l /= base_divider;
+		i++;
 	}
-	return (counter);
+	while (--i >= 0){
+		ft_putchar_fd(nbr_c[i],1);
+		c++;
+	}
+	return (c);
 }
+
+// int main (void)
+// {
+// 	int c;
+
+// 	c = ft_putnbr_base(21071989,"123456789abcdef");
+// 	printf ("\nN_caracters: %d", c);
+// 	return (0);
+// }

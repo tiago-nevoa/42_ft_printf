@@ -6,9 +6,12 @@
 /*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 18:41:19 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/05 17:51:05 by tiago_nevoa      ###   ########.fr       */
+/*   Updated: 2022/03/07 15:32:55 by tiago_nevoa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Negative binary & Hexa
+// Counter printf & ft_printft
 
 #include "libft.h"
 

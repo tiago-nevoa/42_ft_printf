@@ -28,16 +28,14 @@ int	ft_flag_select(char flag, va_list arguments)
 		return (ft_putstr_fd(va_arg(arguments, char *), 1));
 	else if (flag == 'p')
 		return (ft_putstr_fd("!pointer!", 1));
-	else if (flag == 'd')
-		return (ft_putnbr_fd(va_arg(arguments, int), 1));
-	else if (flag == 'i')
+	else if (flag == 'd' || flag == 'i')
 		return (ft_putnbr_fd(va_arg(arguments, int), 1));
 	else if (flag == 'u')
 		return (ft_putnbr_fd(va_arg(arguments, unsigned int), 1));
 	else if (flag == 'x')
-		return (ft_putstr_fd("!hexadecimal_lower!", 1));
+		return (ft_putnbr_base(va_arg(arguments, int), "0123456789abcdef"));
 	else if (flag == 'X')
-		return (ft_putstr_fd("!hexadecimal_upper!", 1));
+		return (ft_putnbr_base(va_arg(arguments, int), "0123456789ABCDEF"));
 	else if (flag == '%')
 		return (ft_putchar_fd('%', 1));
 	return (0);
