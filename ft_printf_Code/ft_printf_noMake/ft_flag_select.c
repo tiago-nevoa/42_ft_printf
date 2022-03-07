@@ -27,7 +27,10 @@ int	ft_flag_select(char flag, va_list arguments)
 	else if (flag == 's')
 		return (ft_putstr_fd(va_arg(arguments, char *), 1));
 	else if (flag == 'p')
-		return (ft_putstr_fd("!pointer!", 1));
+			{
+				ft_putstr_fd("0x", 1);
+				return (ft_putnbr_base(va_arg(arguments, int), "0123456789abcdef") + 2);
+			}
 	else if (flag == 'd' || flag == 'i')
 		return (ft_putnbr_fd(va_arg(arguments, int), 1));
 	else if (flag == 'u')
