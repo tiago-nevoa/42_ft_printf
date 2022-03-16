@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_puthex_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 17:33:08 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/16 20:52:03 by tferreir         ###   ########.fr       */
+/*   Created: 2022/03/16 20:26:48 by tferreir          #+#    #+#             */
+/*   Updated: 2022/03/16 20:52:06 by tferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_puthex_fd(unsigned int n, int flag, int fd)
 {
-	int		i;
-	int		counter;
-	va_list	arguments;
+	int	counter;
 
-	va_start (arguments, format);
 	counter = 0;
-	i = -1;
-	while (format[++i])
+	if (n >= 16)
+		ft_puthex_fd(n / 16, flag, fd);
+	if (flag == 'X')
 	{
-		if (format[i] == '%')
-		{
-			++i;
-			counter += ft_flag_select(format[i], arguments);
-		}
-		else
-			counter += ft_putchar_fd(format[i], 1);
+		ft_putchar_fd("0123456789ABCDEF"[n % 16], fd);
+		counter++;
 	}
-	va_end (arguments);
+	else
+	{
+		ft_putchar_fd("0123456789abcdef"[n % 16], fd);
+		counter++;
+	}
 	return (counter);
 }
