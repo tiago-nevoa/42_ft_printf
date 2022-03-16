@@ -20,24 +20,26 @@ return int lenght of char on console
 'X' convert to Hex with UpperCase
 '%' print '%'
 */
-void	ft_flag_select(char flag, va_list arguments)
+int	ft_flag_select(char flag, va_list arguments)
 {
 	if (flag == 'c')
-		ft_putchar_fd(va_arg(arguments, int), 1);
+		return (ft_putchar_fd(va_arg(arguments, int), 1));
 	else if (flag == 's')
-		ft_putstr_fd(va_arg(arguments, char *), 1);
+		return (ft_putstr_fd(va_arg(arguments, char *), 1));
 	else if (flag == 'p')
-		ft_putstr_fd("!pointer!", 1);
-	else if (flag == 'd')
-		ft_putnbr_fd(va_arg(arguments, int), 1);
-	else if (flag == 'i')
-		ft_putnbr_fd(va_arg(arguments, int), 1);
+			{
+				ft_putstr_fd("0x", 1);
+				return (ft_putnbr_base(va_arg(arguments, int), "0123456789abcdef") + 2);
+			}
+	else if (flag == 'd' || flag == 'i')
+		return (ft_putnbr_fd(va_arg(arguments, int), 1));
 	else if (flag == 'u')
-		ft_putnbr_fd(va_arg(arguments, unsigned int), 1);
+		return (ft_putnbr_fd(va_arg(arguments, unsigned int), 1));
 	else if (flag == 'x')
-		ft_putstr_fd("!hexadecimal_lower!", 1);
+		return (ft_putnbr_base(va_arg(arguments, int), "0123456789abcdef"));
 	else if (flag == 'X')
-		ft_putstr_fd("!hexadecimal_upper!", 1);
+		return (ft_putnbr_base(va_arg(arguments, int), "0123456789ABCDEF"));
 	else if (flag == '%')
-		ft_putchar_fd('%', 1);
+		return (ft_putchar_fd('%', 1));
+	return (0);
 }

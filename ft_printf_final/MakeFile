@@ -3,24 +3,24 @@
 #                                                         :::      ::::::::    #
 #    MakeFile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+         #
+#    By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/05 16:19:08 by tiago_nevoa       #+#    #+#              #
-#    Updated: 2022/03/05 16:37:39 by tiago_nevoa      ###   ########.fr        #
+#    Created: 2022/03/05 15:13:43 by tiago_nevoa       #+#    #+#              #
+#    Updated: 2022/03/16 17:40:29 by tferreir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ft_putchar_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_strlen.c
+SRCS			=	src/ft_flag_select.c src/ft_printf.c src/main.c \
+					libft/ft_isprint.c libft/ft_putchar_fd.c libft/ft_putnbr_base.c libft/ft_putnbr_fd.c libft\ft_putstr_fd.c libft\ft_strlen.c
 
-OBJS = ${SRCS:.c=.o}
-
-NAME = libft.a
-HEAD = includes
-CC = gcc
-RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
-AR = ar rc
-RANLIB = ranlib
+OBJS	= ${SRCS:.c=.o}
+NAME	= libftprintf.a
+HEAD	= includes
+CC		= gcc
+RM		= rm -f
+CFLAGS	= -Wall -Wextra -Werror
+AR		= ar rc
+RANLIB	= ranlib
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${HEAD}
@@ -31,11 +31,8 @@ ${NAME}: ${OBJS}
 
 all: ${NAME}
 
-bonus : ${OBJS_BONUS}
-	${AR} ${NAME} ${OBJS_BONUS}
-
 clean:
-	${RM} ${OBJS} ${OBJS_BONUS}
+	${RM} ${OBJS}
 
 fclean: clean
 	${RM} ${NAME}

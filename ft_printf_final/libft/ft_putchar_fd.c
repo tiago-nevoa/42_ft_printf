@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 19:53:20 by tferreir          #+#    #+#             */
-/*   Updated: 2021/11/24 18:36:24 by tferreir         ###   ########.fr       */
+/*   Created: 2021/12/20 18:09:59 by tferreir          #+#    #+#             */
+/*   Updated: 2022/03/05 17:51:01 by tiago_nevoa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int	ft_putchar_fd(char c, int fd)
 {
-	return (c >= 32 && c <= 126);
+	write(fd, &c, 1);
+	return (1);
 }
-/*
-int	main(void)
-{
-	char	c;
-
-	c = 0;
-	while (c <= 126)
-	{
-		if (ft_isprint(c))
-			printf("c = %c -> is Printable \n", c);
-		else
-			printf("c = %c -> NOT NOT NOT PRINTABLE \n", c);
-		c++;
-	}
-}
-*/

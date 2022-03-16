@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 18:19:19 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/05 16:37:35 by tiago_nevoa      ###   ########.fr       */
+/*   Created: 2021/11/10 18:39:26 by tferreir          #+#    #+#             */
+/*   Updated: 2022/03/16 17:38:02 by tferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+size_t	ft_strlen(const char *s)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
+	size_t	index;
+
+	index = 0;
+	while (s[index])
+		index++;
+	return (index);
 }
+/*
+int	main(void)
+{
+	char	*s;
+
+	s = "123456";
+	printf("The String s = %s\n", s);
+	printf("s lenght is = %zu", ft_strlen(s));
+}
+*/

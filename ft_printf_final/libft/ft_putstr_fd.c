@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiago_nevoa <tiago_nevoa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 16:30:02 by tiago_nevoa       #+#    #+#             */
-/*   Updated: 2022/03/05 16:37:38 by tiago_nevoa      ###   ########.fr       */
+/*   Created: 2021/12/20 18:19:19 by tferreir          #+#    #+#             */
+/*   Updated: 2022/03/05 17:51:06 by tiago_nevoa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "libft.h"
 
-# define LIBFT_H
-
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr_fd(char *s, int fd);
-size_t	ft_strlen(const char *s);
-
-#endif
+int	ft_putstr_fd(char *s, int fd)
+{
+	if (s)
+		write(fd, s, ft_strlen(s));
+	return (ft_strlen(s));
+}
