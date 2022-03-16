@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putunsigned_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 16:30:02 by tiago_nevoa       #+#    #+#             */
-/*   Updated: 2022/03/16 18:56:21 by tferreir         ###   ########.fr       */
+/*   Created: 2022/03/16 18:48:42 by tferreir          #+#    #+#             */
+/*   Updated: 2022/03/16 19:01:10 by tferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "libft.h"
 
-# define LIBFT_H
+int ft_putunsigned_fd(unsigned int n, int fd)
+{
+	int counter;
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-
-int		ft_isprint(int c);
-int		ft_putchar_fd(char c, int fd);
-int		ft_putnbr_base(int nbr, char *base);
-int		ft_putnbr_fd(int n, int fd);
-int		ft_putstr_fd(char *s, int fd);
-int 	ft_putunsigned_fd(unsigned int n, int fd);
-size_t	ft_strlen(const char *s);
-
-#endif
+	counter = 0;
+	if (n >= 0 && n < 10)
+	{
+		n = n + '0';
+		ft_putchar_fd(n, fd);
+		counter++;
+	}
+	else
+	{
+		ft_putunsigned_fd(n / 10, fd);
+		n = n % 10 + '0';
+		ft_putchar_fd(n, fd);
+		counter++;
+	}
+	return (counter);
+}

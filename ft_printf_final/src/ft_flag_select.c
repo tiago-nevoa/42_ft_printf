@@ -34,7 +34,7 @@ int	ft_flag_select(char flag, va_list arguments)
 	else if (flag == 'd' || flag == 'i')
 		return (ft_putnbr_fd(va_arg(arguments, int), 1));
 	else if (flag == 'u')
-		return (ft_putnbr_fd(va_arg(arguments, unsigned int), 1));
+		return (ft_putunsigned_fd(va_arg(arguments, unsigned int), 1));
 	else if (flag == 'x')
 		return (ft_putnbr_base(va_arg(arguments, int), "0123456789abcdef"));
 	else if (flag == 'X')

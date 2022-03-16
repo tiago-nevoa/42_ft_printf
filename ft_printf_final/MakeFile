@@ -6,12 +6,12 @@
 #    By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/05 15:13:43 by tiago_nevoa       #+#    #+#              #
-#    Updated: 2022/03/16 17:40:29 by tferreir         ###   ########.fr        #
+#    Updated: 2022/03/16 18:56:38 by tferreir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS			=	src/ft_flag_select.c src/ft_printf.c src/main.c \
-					libft/ft_isprint.c libft/ft_putchar_fd.c libft/ft_putnbr_base.c libft/ft_putnbr_fd.c libft\ft_putstr_fd.c libft\ft_strlen.c
+					libft/ft_isprint.c libft/ft_putchar_fd.c libft/ft_putnbr_base.c libft/ft_putnbr_fd.c libft\ft_putstr_fd.c libft\ft_strlen.c ft_putunsigned_fd.c
 
 OBJS	= ${SRCS:.c=.o}
 NAME	= libftprintf.a
