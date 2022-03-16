@@ -6,7 +6,7 @@
 /*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 17:33:08 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/16 17:44:36 by tferreir         ###   ########.fr       */
+/*   Updated: 2022/03/16 19:07:10 by tferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_printf(const char *format, ...)
 {
 	int		i;
-	int 	counter;
+	int		counter;
 	va_list	arguments;
 
 	va_start (arguments, format);

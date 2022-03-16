@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flag_select.c                                     :+:      :+:    :+:   */
+/*   ft_flag_select.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 23:07:58 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/03 23:31:53 by tferreir         ###   ########.fr       */
+/*   Updated: 2022/03/16 19:07:00 by tferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int	ft_flag_select(char flag, va_list arguments)
 	else if (flag == 's')
 		return (ft_putstr_fd(va_arg(arguments, char *), 1));
 	else if (flag == 'p')
-			{
-				ft_putstr_fd("0x", 1);
-				return (ft_putnbr_base(va_arg(arguments, int), "0123456789abcdef") + 2);
-			}
+	{
+		ft_putstr_fd("0x", 1);
+		return (ft_putnbr_base(va_arg(arguments, int), "0123456789abcdef") + 2);
+	}
 	else if (flag == 'd' || flag == 'i')
 		return (ft_putnbr_fd(va_arg(arguments, int), 1));
 	else if (flag == 'u')

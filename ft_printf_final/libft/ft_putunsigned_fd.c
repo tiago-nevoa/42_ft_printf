@@ -6,15 +6,15 @@
 /*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 18:48:42 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/16 19:01:10 by tferreir         ###   ########.fr       */
+/*   Updated: 2022/03/16 19:03:59 by tferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_putunsigned_fd(unsigned int n, int fd)
+int	ft_putunsigned_fd(unsigned int n, int fd)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (n >= 0 && n < 10)
