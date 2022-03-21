@@ -6,7 +6,7 @@
 /*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 15:39:27 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/18 18:19:13 by tferreir         ###   ########.fr       */
+/*   Updated: 2022/03/21 15:31:36 by tferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@
 
 int		ft_flag_select(char flag, va_list arguments);
 int		ft_printf(const char *format, ...);
-int		main(void);
+// int		main(void);
 
 #endif
