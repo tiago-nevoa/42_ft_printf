@@ -14,22 +14,25 @@
 
 // return counter recursive algoritm
 
-int	ft_putaddrs_fd(unsigned long n, int tag, int fd)
+void	putaddrs(unsigned long n, int fd, int *counter)
 {
-	if (!tag)
-	{
-		ft_putstr_fd("0x", fd);
-		tag = 2;
-	}
 	if (n >= 16)
 	{
-		ft_putaddrs_fd(n / 16, tag, fd);
-		ft_putaddrs_fd(n % 16, tag, fd);
+		putaddrs(n / 16, fd, counter);
+		putaddrs(n % 16, fd, counter);
 	}
 	else
 	{
-		ft_putchar_fd("0123456789abcdef"[n % 16], fd);
-		++tag;
+		*counter += ft_putchar_fd("0123456789abcdef"[n % 16], fd);
 	}
-	return (tag);
+}
+
+int	ft_putaddrs_fd(unsigned long n, int fd)
+{
+	int	counter;
+
+	counter = 0;
+	counter += ft_putstr_fd("0x", fd);
+	putaddrs(n, fd, &counter);
+	return (counter);
 }
