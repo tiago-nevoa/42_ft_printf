@@ -6,7 +6,7 @@
 /*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:39:26 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/18 18:24:12 by tferreir         ###   ########.fr       */
+/*   Updated: 2022/03/23 20:31:10 by tferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,3 @@ size_t	ft_strlen(const char *s)
 		index++;
 	return (index);
 }
-/*
-int	main(void)
-{
-	char	*s;
-
-	s = "123456";
-	printf("The String s = %s\n", s);
-	printf("s lenght is = %zu", ft_strlen(s));
-}
-*/

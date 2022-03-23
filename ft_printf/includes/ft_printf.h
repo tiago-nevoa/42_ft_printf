@@ -6,7 +6,7 @@
 /*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 15:39:27 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/23 18:58:37 by tferreir         ###   ########.fr       */
+/*   Updated: 2022/03/23 20:25:16 by tferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 # include <stdio.h>
 # include <limits.h>
 
-int		ft_flag_select(char flag, va_list arguments);
+int		ft_flag_select(char flag, va_list arguments, int fd);
 int		ft_printf(const char *format, ...);
-// int		main(void);
 
 #endif

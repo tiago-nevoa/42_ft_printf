@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MakeFile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/05 15:13:43 by tiago_nevoa       #+#    #+#              #
-#    Updated: 2022/03/21 15:33:59 by tferreir         ###   ########.fr        #
+#    Updated: 2022/03/23 20:37:42 by tferreir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,20 +25,16 @@ FT_PRINTF_DIR =	ft_printf
 SRC_FLS	=		$(LIBFT_FLS)\
 				$(FT_PRINTF_FLS)\
 
-LIBFT_FLS = 	$(LIBFT_DIR)/ft_isprint.c \
-				$(LIBFT_DIR)/ft_putaddrs_fd.c \
+LIBFT_FLS =		$(LIBFT_DIR)/ft_putaddrs_fd.c \
 				$(LIBFT_DIR)/ft_putchar_fd.c \
-				$(LIBFT_DIR)/ft_putnbr_base.c \
+				$(LIBFT_DIR)/ft_puthex_fd.c \
 				$(LIBFT_DIR)/ft_putnbr_fd.c \
 				$(LIBFT_DIR)/ft_putstr_fd.c \
-				$(LIBFT_DIR)/ft_strlen.c \
 				$(LIBFT_DIR)/ft_putunsigned_fd.c \
-				$(LIBFT_DIR)/ft_puthex_fd.c
-
+				$(LIBFT_DIR)/ft_strlen.c \
 
 FT_PRINTF_FLS = $(FT_PRINTF_DIR)/ft_flag_select.c \
 				$(FT_PRINTF_DIR)/ft_printf.c \
-				$(FT_PRINTF_DIR)/main.c \
 
 # ------------  FILEPATHS  --------------------------------------------------- #
 SRCS	=		$(addprefix $(SRC_DIR)/, $(SRC_FLS))
