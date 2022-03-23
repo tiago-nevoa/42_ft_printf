@@ -6,7 +6,7 @@
 /*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 18:41:19 by tferreir          #+#    #+#             */
-/*   Updated: 2022/03/21 15:25:05 by tferreir         ###   ########.fr       */
+/*   Updated: 2022/03/23 19:56:25 by tferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,36 @@
 // Counter printf & ft_printft
 #include "../../includes/libft.h"
 
-int	ft_putnbr_fd(int n, int fd)
+void	putnbr(long n, int fd, int *counter)
 {
-	int	counter;
-
-	counter = 0;
 	if (n < 0)
 	{
 		if (n == -2147483648)
 		{
-			ft_putstr_fd("-2147483648", fd);
-			return (11);
+			*counter += ft_putstr_fd("-2147483648", fd);
+			return ;
 		}
-		ft_putchar_fd('-', fd);
-		++counter;
+		*counter += ft_putchar_fd('-', fd);
 		n = -n;
 	}
 	if (n >= 0 && n < 10)
 	{
 		n = n + '0';
-		ft_putchar_fd(n, fd);
-		++counter;
+		*counter += ft_putchar_fd(n, fd);
 	}
 	else
 	{
-		ft_putnbr_fd(n / 10, fd);
+		putnbr(n / 10, fd, counter);
 		n = n % 10 + '0';
-		ft_putchar_fd(n, fd);
-		++counter;
+		*counter += ft_putchar_fd(n, fd);
 	}
+}
+
+int	ft_putnbr_fd(int n, int fd)
+{
+	int	counter;
+
+	counter = 0;
+	putnbr(n, fd, &counter);
 	return (counter);
 }

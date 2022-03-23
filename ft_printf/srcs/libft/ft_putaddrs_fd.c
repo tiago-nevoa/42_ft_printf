@@ -12,8 +12,6 @@
 
 #include "../../includes/libft.h"
 
-// return counter recursive algoritm
-
 void	putaddrs(unsigned long n, int fd, int *counter)
 {
 	if (n >= 16)

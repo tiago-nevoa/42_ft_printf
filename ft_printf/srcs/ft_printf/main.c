@@ -6,7 +6,7 @@
 /*   By: tferreir <tferreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 17:29:18 by tiago_nevoa       #+#    #+#             */
-/*   Updated: 2022/03/23 18:58:34 by tferreir         ###   ########.fr       */
+/*   Updated: 2022/03/23 19:57:47 by tferreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 // int	main(void)
 // {
 // 	int		counter;
-// 	char	*p;
+// 	int		p;
 
-// 	p = -1;
+// 	p = -2147483;
 // 	counter = 0;
-// 	counter = ft_printf("pointer:%p", p);
+// 	counter = ft_printf("pointer:%d", p);
 // 	printf("\nN_caracters: %d \n", counter);
-// 	counter = printf("pointer:%p", p);
+// 	counter = printf("pointer:%d", p);
 // 	printf("\nN_caracters: %d \n", counter);
 // 	return (0);
 // }
